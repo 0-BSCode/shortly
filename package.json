@@ -2,7 +2,10 @@
   "name": "@gql-nest-clean/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "db:up": "docker-compose -f docker-compose.dev.yml up",
+    "db:down": "docker-compose -f docker-compose.dev.yml down"
+  },
   "private": true,
   "devDependencies": {
     "@nestjs/schematics": "^10.0.1",

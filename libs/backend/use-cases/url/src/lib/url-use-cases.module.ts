@@ -4,7 +4,7 @@ import { DataServicesModule } from '@services';
 
 
 @Module({
-  controllers: [DataServicesModule],
+  imports: [DataServicesModule],
   providers: [UrlUseCases],
   exports: [UrlUseCases],
 })

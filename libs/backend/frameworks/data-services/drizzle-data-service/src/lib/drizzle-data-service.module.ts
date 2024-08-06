@@ -13,7 +13,8 @@ import { DrizzleDataService } from './drizzle-data-service.service';
     }),
   ],
   providers: [
-    DrizzleUrlRepository, {
+    DrizzleUrlRepository, 
+    {
       provide: IDataService,
       useClass: DrizzleDataService
     }

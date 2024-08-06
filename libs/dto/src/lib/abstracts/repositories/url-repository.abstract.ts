@@ -1,6 +1,6 @@
-import { CreateUrlDto } from "../url/create.url.dto";
-import { UpdateUrlDto } from "../url/update.url.dto";
-import { UrlDto } from "../url/url.dto";
+import { CreateUrlDto } from "../../url/create.url.dto";
+import { UpdateUrlDto } from "../../url/update.url.dto";
+import { UrlDto } from "../../url/url.dto";
 
 export abstract class IUrlRepository {
     abstract findById(id: number): Promise<UrlDto>;

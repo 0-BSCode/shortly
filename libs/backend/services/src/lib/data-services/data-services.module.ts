@@ -3,6 +3,6 @@ import {DrizzleDataServicesModule} from '@drizzle-data-service';
 
 @Module({
   imports: [DrizzleDataServicesModule],
-  exports: [],
+  exports: [DrizzleDataServicesModule],
 })
 export class DataServicesModule {}

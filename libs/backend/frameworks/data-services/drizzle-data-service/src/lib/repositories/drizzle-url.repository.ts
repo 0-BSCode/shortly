@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { CreateUrlDto, IUrlRepository, UpdateUrlDto, UrlDto } from '@dto';
 import { NodePgDatabase } from 'drizzle-orm/node-postgres';
 import { schema, UrlDrizzleDataType } from '../schema';
@@ -7,7 +7,10 @@ import { eq } from 'drizzle-orm';
 @Injectable()
 export class DrizzleUrlRepository implements IUrlRepository {
   private readonly table = schema.urlsTable;
-  constructor(private readonly dbService: NodePgDatabase<typeof schema>) {}
+  constructor(
+    @Inject('DB_DEV') 
+    private readonly dbService: NodePgDatabase<typeof schema>
+  ) {}
 
   async findById(id: number): Promise<UrlDto> {
     const record = await this.dbService
@@ -23,6 +26,7 @@ export class DrizzleUrlRepository implements IUrlRepository {
     const record = await this.dbService
       .insert(this.table)
       .values({
+        shortenedUrl: createDto.shortenedUrl,
         originalUrl: createDto.originalUrl,
       })
       .returning();
@@ -35,6 +39,7 @@ export class DrizzleUrlRepository implements IUrlRepository {
       .update(this.table)
       .set({
         originalUrl: updateDto.originalUrl,
+        shortenedUrl: updateDto.shortenedUrl,
       })
       .where(eq(this.table.id, id))
       .returning();
@@ -53,6 +58,7 @@ export class DrizzleUrlRepository implements IUrlRepository {
     return {
       id: value.id,
       originalUrl: value.originalUrl,
+      shortenedUrl: value.shortenedUrl,
       createdAt: new Date(value.createdAt),
       clicks: value.clicks,
     };

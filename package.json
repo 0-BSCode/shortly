@@ -4,7 +4,9 @@
   "license": "MIT",
   "scripts": {
     "db:up": "docker-compose -f docker-compose.dev.yml up",
-    "db:down": "docker-compose -f docker-compose.dev.yml down"
+    "db:down": "docker-compose -f docker-compose.dev.yml down",
+    "drizzle:generate": "drizzle-kit generate --config libs/backend/frameworks/data-services/data-service/src/lib/config/drizzle.config.ts",
+    "drizzle:migrate": "drizzle-kit migrate --config libs/backend/frameworks/data-services/data-service/src/lib/config/drizzle.config.ts"
   },
   "private": true,
   "devDependencies": {

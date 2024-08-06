@@ -1,0 +1,9 @@
+{
+  "name": "drizzle-data-service",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/backend/frameworks/data-services/drizzle-data-service/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project drizzle-data-service --web",
+  "targets": {}
+}

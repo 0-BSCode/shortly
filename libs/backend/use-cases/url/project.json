@@ -1,0 +1,9 @@
+{
+  "name": "url-use-cases",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/backend/use-cases/url/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project url-use-cases --web",
+  "targets": {}
+}

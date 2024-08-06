@@ -15,10 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@drizzle-db-lib": [
-        "libs/backend/data-providers/drizzle-db-lib/src/index.ts"
+      "@drizzle-data-service": [
+        "libs/backend/frameworks/data-services/drizzle-data-service/src/index.ts"
       ],
-      "@dto": ["libs/dto/src/index.ts"]
+      "@dto": ["libs/dto/src/index.ts"],
+      "@services": ["libs/backend/services/src/index.ts"],
+      "@url-use-cases": ["libs/backend/use-cases/url/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

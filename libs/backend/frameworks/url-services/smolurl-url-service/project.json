@@ -1,0 +1,9 @@
+{
+  "name": "smolurl-url-service",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/backend/frameworks/url-services/smolurl-url-service/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project smolurl-url-service --web",
+  "targets": {}
+}

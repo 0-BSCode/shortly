@@ -17,6 +17,9 @@
     "paths": {
       "@dto": ["libs/dto/src/index.ts"],
       "@services": ["libs/backend/services/src/index.ts"],
+      "@smolurl-url-service": [
+        "libs/backend/frameworks/url-services/smolurl-url-service/src/index.ts"
+      ],
       "@typeorm-data-service": [
         "libs/backend/frameworks/data-services/typeorm-data-service/src/index.ts"
       ],

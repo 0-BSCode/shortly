@@ -1,14 +1,18 @@
-import { CreateUrlDto, IDataService, UrlDto } from '@dto';
+import { CreateUrlDto, IDataService, IUrlService, UrlDto } from '@dto';
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class UrlUseCases {
-    constructor(private readonly dataService: IDataService) {}
+    constructor(
+        private readonly dataService: IDataService,
+        private readonly urlService: IUrlService
+    ) {}
     async shortenUrl(url: string): Promise<UrlDto> {
+        const shortenedUrl = await this.urlService.shortenLink(url)
 
         const createDto: CreateUrlDto = {
             originalUrl: url,
-            shortenedUrl: url,
+            shortenedUrl,
             clicks: 0
         }
 

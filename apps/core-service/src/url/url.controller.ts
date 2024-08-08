@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from "@nestjs/common";
+import { Body, Controller, Get, Post } from "@nestjs/common";
 import { UrlUseCases } from "@url-use-cases";
 
 @Controller('url')
@@ -7,5 +7,10 @@ export class UrlController {
     @Post()
     shorten(@Body() url: string) {
         return this.urlUseCases.shortenUrl(url)
+    }
+
+    @Get()
+    getAll() {
+        return this.urlUseCases.fetchAllUrls();
     }
 }

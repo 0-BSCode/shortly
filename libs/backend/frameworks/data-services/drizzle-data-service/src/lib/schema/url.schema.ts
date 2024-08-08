@@ -1,3 +1,4 @@
+import { InferSelectModel } from 'drizzle-orm';
 import { date, integer, pgTable, serial, varchar } from 'drizzle-orm/pg-core';
 
 export const urlsTable = pgTable('Urls', {
@@ -7,3 +8,5 @@ export const urlsTable = pgTable('Urls', {
   createdAt: date('createdAt').notNull().defaultNow(),
   clicks: integer('clicks').notNull().default(0),
 });
+
+export type UrlDrizzleDataType = InferSelectModel<typeof urlsTable>;

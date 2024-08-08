@@ -20,6 +20,9 @@
       ],
       "@dto": ["libs/dto/src/index.ts"],
       "@services": ["libs/backend/services/src/index.ts"],
+      "@typeorm-data-service": [
+        "libs/backend/frameworks/data-services/typeorm-data-service/src/index.ts"
+      ],
       "@url-use-cases": ["libs/backend/use-cases/url/src/index.ts"]
     }
   },

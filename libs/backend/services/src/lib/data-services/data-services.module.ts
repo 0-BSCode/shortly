@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import {DrizzleDataServicesModule} from '@drizzle-data-service';
+import { TypeormDataServiceModule } from '@typeorm-data-service';
 
 @Module({
-  imports: [DrizzleDataServicesModule],
-  exports: [DrizzleDataServicesModule],
+  imports: [TypeormDataServiceModule],
+  exports: [TypeormDataServiceModule],
 })
 export class DataServicesModule {}

@@ -1,15 +1,16 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { CreateUrlDto, IUrlRepository, UpdateUrlDto, UrlDto } from '@dto';
 import { NodePgDatabase } from 'drizzle-orm/node-postgres';
-import { schema, UrlDrizzleDataType } from '../schema';
 import { eq } from 'drizzle-orm';
+import { masterSchema } from '../drizzle-config.service';
+import { UrlDrizzleDataType } from '../schema';
 
 @Injectable()
 export class DrizzleUrlRepository implements IUrlRepository {
-  private readonly table = schema.urlsTable;
+  private readonly table = masterSchema.urlsTable;
   constructor(
     @Inject('DB_DEV') 
-    private readonly dbService: NodePgDatabase<typeof schema>
+    private readonly dbService: NodePgDatabase<typeof masterSchema>
   ) {}
 
   async findById(id: number): Promise<UrlDto> {

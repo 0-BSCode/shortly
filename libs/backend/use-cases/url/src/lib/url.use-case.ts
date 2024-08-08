@@ -9,10 +9,17 @@ export class UrlUseCases {
         const createDto: CreateUrlDto = {
             originalUrl: url,
             shortenedUrl: url,
+            clicks: 0
         }
 
         const response = await this.dataService.urls.create(createDto)
 
         return response;
+    }
+
+    async fetchAllUrls(): Promise<UrlDto[]> {
+        const response = await this.dataService.urls.findAll()
+
+        return response
     }
 }

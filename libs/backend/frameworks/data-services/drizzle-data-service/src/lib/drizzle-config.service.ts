@@ -1,7 +1,11 @@
 import { DrizzlePGConfig } from '@knaadh/nestjs-drizzle-pg/src/node-postgres.interface';
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { schema } from './schema';
+import * as schema from './schema';
+
+export const masterSchema = {
+  urlsTable: schema.urlsTable,
+}
 
 @Injectable()
 export class DrizzleConfigService {
@@ -15,7 +19,7 @@ export class DrizzleConfigService {
           connectionString: this.configService.get<string>('DATABASE_URL'),
         },
       },
-      config: { schema: schema },
+      config: { schema: masterSchema },
     };
   }
 }

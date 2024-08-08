@@ -13,5 +13,5 @@
     "noFallthroughCasesInSwitch": true
   },
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
-  "include": ["src/**/*.ts", "../core-service-v2/src/url/url.dto.ts"]
+  "include": ["src/**/*.ts"]
 }

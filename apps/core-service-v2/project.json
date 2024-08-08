@@ -1,0 +1,26 @@
+{
+  "name": "core-service-v2",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/core-service-v2/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "core-service-v2:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "core-service-v2:build:development"
+        },
+        "production": {
+          "buildTarget": "core-service-v2:build:production"
+        }
+      }
+    }
+  }
+}

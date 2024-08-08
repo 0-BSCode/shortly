@@ -1,13 +1,11 @@
-import { Query, Parent, ResolveField, Resolver } from "@nestjs/graphql";
+import { Query, Parent, ResolveField, Resolver, Mutation, Args } from "@nestjs/graphql";
 import { UrlOutput } from "./url.dto";
 import { UrlUseCases } from "@url-use-cases";
 import { UrlDto } from "@dto";
 
 @Resolver(() => UrlOutput)
 export class UrlResolver {
-    constructor(private readonly urlUseCases: UrlUseCases) {
-
-    }
+    constructor(private readonly urlUseCases: UrlUseCases) {}
 
     @ResolveField('_id', () => Number)
     async getUrlId(@Parent() parent: UrlDto) {
@@ -16,18 +14,11 @@ export class UrlResolver {
 
     @Query(() => [UrlOutput])
     async getAllUrls() {
-        const records = await this.urlUseCases.fetchAllUrls();
-        return records;
-        // return records.map(this.convertToOutput)
+        return this.urlUseCases.fetchAllUrls();
     }
 
-    convertToOutput(dto: UrlDto): UrlOutput {
-        return {
-            _id: dto.id,
-            originalUrl: dto.originalUrl,
-            shortenedUrl: dto.shortenedUrl,
-            clicks: dto.clicks,
-            createdAt: dto.createdAt
-        }
+    @Mutation(() => UrlOutput)
+    async shortenUrl(@Args('url') url: string) {
+        return this.urlUseCases.shortenUrl(url);
     }
 }

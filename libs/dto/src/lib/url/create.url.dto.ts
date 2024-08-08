@@ -1,4 +1,8 @@
-import {PickType} from '@nestjs/mapped-types';
+import { PickType } from '@nestjs/mapped-types';
 import { UrlDto } from './url.dto';
 
-export class CreateUrlDto extends PickType(UrlDto, ["originalUrl", "shortenedUrl", "clicks"]) {}
+export class CreateUrlDto extends PickType(UrlDto, [
+  'originalUrl',
+  'shortenedUrl',
+  'clicks',
+]) {}

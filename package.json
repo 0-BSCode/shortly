@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "npx nx run-many --target=lint --all",
-    "format": "npx nx run-many --target=format --all",
+    "format": "nx format:write --all",
     "db:up": "docker-compose -f docker-compose.dev.yml up",
     "db:down": "docker-compose -f docker-compose.dev.yml down",
     "prepare": "husky"

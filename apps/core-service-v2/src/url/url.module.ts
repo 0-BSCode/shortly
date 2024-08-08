@@ -1,9 +1,9 @@
-import { Module } from "@nestjs/common";
-import { UrlResolver } from "./url.resolver";
-import { UrlUseCasesModule } from "@url-use-cases";
+import { Module } from '@nestjs/common';
+import { UrlResolver } from './url.resolver';
+import { UrlUseCasesModule } from '@url-use-cases';
 
 @Module({
-    imports: [UrlUseCasesModule],
-    providers: [UrlResolver]
+  imports: [UrlUseCasesModule],
+  providers: [UrlResolver],
 })
-export class UrlModule { }
+export class UrlModule {}

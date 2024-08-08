@@ -1,5 +1,7 @@
 # Project Idea: URL Shortener API
+
 ## Overview:
+
 A URL shortener API takes long URLs and converts them into shorter, more manageable links. This project allows you to practice backend development while building a practical application.
 
 ## Features:
@@ -11,7 +13,9 @@ A URL shortener API takes long URLs and converts them into shorter, more managea
 - API Usage Limits: Implement rate limiting or API keys to prevent abuse.
 
 ## Data Model:
+
 ### ShortenedUrl:
+
 - short_id (unique identifier)
 - original_url (full URL)
 - created_at (timestamp)
@@ -22,7 +26,6 @@ A URL shortener API takes long URLs and converts them into shorter, more managea
 - POST /shorten: Create a new short link.
 - GET /:short_id: Redirect to the original URL or return the original URL.
 - GET /stats/:short_id: Retrieve click statistics for a short link (optional).
-
 
 ## Technology Stack:
 

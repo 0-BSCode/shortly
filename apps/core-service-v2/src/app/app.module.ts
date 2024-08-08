@@ -15,7 +15,7 @@ import path from 'path';
       driver: ApolloDriver,
       autoSchemaFile: path.join(__dirname, '..', 'gql/schema.gql'),
     }),
-    UrlModule
+    UrlModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -3,12 +3,14 @@ import { Injectable, OnApplicationBootstrap } from '@nestjs/common';
 import { TypeormUrlRepository } from './repositories/typeorm-url.repository';
 
 @Injectable()
-export class TypeormDataService implements IDataService, OnApplicationBootstrap{
-    urls: IUrlRepository;
+export class TypeormDataService
+  implements IDataService, OnApplicationBootstrap
+{
+  urls: IUrlRepository;
 
-    constructor(private readonly urlRepository: TypeormUrlRepository) {}
+  constructor(private readonly urlRepository: TypeormUrlRepository) {}
 
-    onApplicationBootstrap() {
-        this.urls = this.urlRepository
-    }
+  onApplicationBootstrap() {
+    this.urls = this.urlRepository;
+  }
 }

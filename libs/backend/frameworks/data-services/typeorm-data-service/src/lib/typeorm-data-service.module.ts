@@ -11,16 +11,16 @@ import { ConfigService } from '@nestjs/config';
   imports: [
     TypeOrmModule.forRootAsync({
       inject: [ConfigService],
-     useClass: TypeOrmConfigService,
+      useClass: TypeOrmConfigService,
     }),
     TypeOrmModule.forFeature([Url]),
   ],
   providers: [
-    TypeormUrlRepository, 
+    TypeormUrlRepository,
     {
       provide: IDataService,
-      useClass: TypeormDataService
-    }
+      useClass: TypeormDataService,
+    },
   ],
   exports: [IDataService],
 })

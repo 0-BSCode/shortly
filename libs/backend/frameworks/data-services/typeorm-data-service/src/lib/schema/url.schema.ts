@@ -1,19 +1,19 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Url {
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    originalUrl: string;
+  @Column()
+  originalUrl: string;
 
-    @Column()
-    shortenedUrl: string;
+  @Column()
+  shortenedUrl: string;
 
-    @Column({type: 'timestamp', default: () => "CURRENT_TIMESTAMP"})
-    createdAt: Date;
+  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
+  createdAt: Date;
 
-    @Column({default: 0})
-    clicks: number;
+  @Column({ default: 0 })
+  clicks: number;
 }

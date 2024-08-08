@@ -15,9 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@drizzle-data-service": [
-        "libs/backend/frameworks/data-services/drizzle-data-service/src/index.ts"
-      ],
       "@dto": ["libs/dto/src/index.ts"],
       "@services": ["libs/backend/services/src/index.ts"],
       "@typeorm-data-service": [

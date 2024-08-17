@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { TypeOrmModuleOptions, TypeOrmOptionsFactory } from '@nestjs/typeorm';
 import { Url } from './schema/url.schema';
+import { User } from './schema/user.schema';
 
 @Injectable()
 export class TypeOrmConfigService implements TypeOrmOptionsFactory {
@@ -12,7 +13,7 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
       url: this.configService.get<string>('DATABASE_URL'),
       // Remove in production
       synchronize: true,
-      entities: [Url],
+      entities: [Url, User],
     };
   }
 }

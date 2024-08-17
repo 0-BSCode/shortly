@@ -36,7 +36,9 @@ export class TypeormUrlRepository implements IUrlRepository {
     newRecord.originalUrl = createDto.originalUrl;
     newRecord.shortenedUrl = createDto.shortenedUrl;
 
-    return await this.repository.save(newRecord);
+    const record = await this.repository.save(newRecord);
+
+    return this.convertToDto(record);
   }
 
   async update(id: number, updateDto: UpdateUrlDto): Promise<UrlDto> {
@@ -56,7 +58,8 @@ export class TypeormUrlRepository implements IUrlRepository {
       updatedRecord.clicks = updateDto.clicks;
     }
 
-    return await this.repository.save(updatedRecord);
+    const record = await this.repository.save(updatedRecord);
+    return this.convertToDto(record);
   }
 
   async deleteById(id: number): Promise<void> {

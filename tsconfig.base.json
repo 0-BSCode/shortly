@@ -15,8 +15,23 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@auth-use-cases": ["libs/backend/use-cases/auth/src/index.ts"],
       "@dto": ["libs/dto/src/index.ts"],
-      "@services": ["libs/backend/services/src/index.ts"],
+      "@passport-auth-service": [
+        "libs/backend/frameworks/auth-services/passport-auth-service/src/index.ts"
+      ],
+      "@services/auth-service": [
+        "libs/backend/services/auth-service/src/index.ts"
+      ],
+      "@services/config-service": [
+        "libs/backend/services/config-service/src/index.ts"
+      ],
+      "@services/data-service": [
+        "libs/backend/services/data-service/src/index.ts"
+      ],
+      "@services/url-service": [
+        "libs/backend/services/url-service/src/index.ts"
+      ],
       "@smolurl-url-service": [
         "libs/backend/frameworks/url-services/smolurl-url-service/src/index.ts"
       ],

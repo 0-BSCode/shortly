@@ -42,5 +42,6 @@ Testing: Jest (or any preferred testing framework)
 - This project can be extended to include features like custom domains, branded links, and analytics.
 
 ### Notes
+
 1. Setup instructions for husky in Nx: [here](https://www.thisdot.co/blog/linting-formatting-and-type-checking-commits-in-an-nx-monorepo-with-husky)
 2. Commitlint setup: [here](https://commitizen.github.io/cz-cli/)

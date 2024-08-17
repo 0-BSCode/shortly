@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
 import { UrlUseCases } from './url.use-case';
-import { DataServicesModule, UrlServicesModule } from '@services';
+import { DataServiceModule } from '@services/data-service';
+import { UrlServiceModule } from '@services/url-service';
 
 @Module({
-  imports: [DataServicesModule, UrlServicesModule],
+  imports: [DataServiceModule, UrlServiceModule],
   providers: [UrlUseCases],
   exports: [UrlUseCases],
 })

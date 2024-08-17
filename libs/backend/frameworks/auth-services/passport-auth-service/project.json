@@ -1,0 +1,9 @@
+{
+  "name": "passport-auth-service",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/backend/frameworks/auth-services/passport-auth-service/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project passport-auth-service --web",
+  "targets": {}
+}

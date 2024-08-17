@@ -9,5 +9,6 @@ export abstract class IUrlRepository {
   abstract update(id: number, updateDto: UpdateUrlDto): Promise<UrlDto>;
   abstract deleteById(id: number): Promise<void>;
 
+  // unknown since input depends on shape of data returned by implementation
   abstract convertToDto(value: unknown): UrlDto;
 }

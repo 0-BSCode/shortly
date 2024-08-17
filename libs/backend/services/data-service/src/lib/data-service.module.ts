@@ -5,4 +5,4 @@ import { TypeormDataServiceModule } from '@typeorm-data-service';
   imports: [TypeormDataServiceModule],
   exports: [TypeormDataServiceModule],
 })
-export class DataServicesModule {}
+export class DataServiceModule {}

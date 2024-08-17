@@ -5,4 +5,4 @@ import { SmolurlUrlServiceModule } from '@smolurl-url-service';
   imports: [SmolurlUrlServiceModule],
   exports: [SmolurlUrlServiceModule],
 })
-export class UrlServicesModule {}
+export class UrlServiceModule {}

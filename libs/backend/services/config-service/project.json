@@ -1,0 +1,9 @@
+{
+  "name": "config-service",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/backend/services/config-service/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project config-service --web",
+  "targets": {}
+}

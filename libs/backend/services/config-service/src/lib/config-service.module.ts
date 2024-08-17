@@ -10,4 +10,4 @@ import { configuration } from './config/configuration';
     }),
   ],
 })
-export class ConfigServicesModule {}
+export class ConfigServiceModule {}

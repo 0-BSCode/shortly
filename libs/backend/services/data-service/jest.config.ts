@@ -1,11 +1,11 @@
 /* eslint-disable */
 export default {
-  displayName: 'services',
-  preset: '../../../jest.preset.js',
+  displayName: 'data-service',
+  preset: '../../../../jest.preset.js',
   testEnvironment: 'node',
   transform: {
     '^.+\\.[tj]s$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.spec.json' }],
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../../coverage/libs/backend/services',
+  coverageDirectory: '../../../../coverage/libs/backend/services/data-service',
 };

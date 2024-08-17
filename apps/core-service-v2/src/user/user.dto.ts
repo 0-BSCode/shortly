@@ -1,31 +1,28 @@
 import { Field, InputType, ObjectType, PartialType } from '@nestjs/graphql';
 
 @ObjectType()
-export class UrlOutput {
+export class UserOutput {
   @Field()
   _id: number;
 
   @Field()
-  originalUrl: string;
-
-  @Field()
-  shortenedUrl: string;
-
-  @Field()
-  clicks: number;
+  email: string;
 
   @Field(() => Date)
   createdAt: Date;
 }
 
 @InputType()
-export class CreateUrlInput {
+export class CreateUserInput {
   @Field()
-  url: string;
+  email: string;
+
+  @Field()
+  password: string;
 }
 
 @InputType()
-export class UpdateUrlInput extends PartialType(CreateUrlInput) {
+export class UpdateUrlInput extends PartialType(CreateUserInput) {
   @Field()
   _id: number;
 }

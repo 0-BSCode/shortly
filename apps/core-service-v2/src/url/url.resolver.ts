@@ -9,8 +9,11 @@ import {
 import { UrlOutput } from './url.dto';
 import { UrlUseCases } from '@url-use-cases';
 import { UrlDto } from '@dto';
+import { UseGuards } from '@nestjs/common';
+import { LocalAuthGuard } from '@services/auth-service';
 
 @Resolver(() => UrlOutput)
+@UseGuards(LocalAuthGuard)
 export class UrlResolver {
   constructor(private readonly urlUseCases: UrlUseCases) {}
 

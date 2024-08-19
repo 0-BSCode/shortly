@@ -8,12 +8,12 @@ import {
 } from '@nestjs/graphql';
 import { UrlOutput } from './url.dto';
 import { UrlUseCases } from '@url-use-cases';
-import { UrlDto } from '@dto';
+import { UrlDto, UserDto } from '@dto';
 import { UseGuards } from '@nestjs/common';
 import { LocalAuthGuard } from '@services/auth-service';
+import { CurrentUser } from '../user/user.dto';
 
 @Resolver(() => UrlOutput)
-@UseGuards(LocalAuthGuard)
 export class UrlResolver {
   constructor(private readonly urlUseCases: UrlUseCases) {}
 

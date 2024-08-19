@@ -6,17 +6,19 @@ import { IDataService } from '@dto';
 @Injectable()
 export class PassportLocalStrategy extends PassportStrategy(Strategy) {
   constructor(private dataService: IDataService) {
-    super();
+    super({
+      usernameField: 'email',
+    });
   }
 
-  async validate(username: string, pass: string): Promise<any> {
-    const user = await this.dataService.users.findByEmail(username);
+  async validate(email: string, pass: string): Promise<any> {
+    const user = await this.dataService.users.findByEmail(email);
 
     if (user && user.password === pass) {
       const { password, ...result } = user;
       return result;
+    } else {
+      throw new UnauthorizedException();
     }
-
-    throw new UnauthorizedException();
   }
 }

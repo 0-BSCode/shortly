@@ -1,8 +1,13 @@
-import { Mutation, Parent, ResolveField, Resolver } from '@nestjs/graphql';
-import { UserOutput } from './user.dto';
+import {
+  Args,
+  Mutation,
+  Parent,
+  ResolveField,
+  Resolver,
+} from '@nestjs/graphql';
+import { CreateUserInput, UserOutput } from './user.dto';
 import { AuthUseCases } from '@auth-use-cases';
-import { UserDto } from '@dto';
-import { Query } from '@nestjs/common';
+import { CreateUserDto, UserDto } from '@dto';
 
 @Resolver(() => UserOutput)
 export class UserResolver {
@@ -13,6 +18,11 @@ export class UserResolver {
     return parent.id;
   }
 
-  // @Query(() => UserOutput)
-  // async
+  @Mutation(() => UserOutput)
+  async signUp(@Args('createUserInput') createUserInput: CreateUserInput) {
+    const dto = new CreateUserDto();
+    dto.email = createUserInput.email;
+    dto.password = createUserInput.password;
+    return this.authUseCases.signUp(dto);
+  }
 }

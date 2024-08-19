@@ -5,7 +5,9 @@ import { AuthGuard } from '@nestjs/passport';
 @Injectable()
 export class PassportLocalAuthGuard extends AuthGuard('local') {
   override getRequest(context: ExecutionContext) {
-    const request = GqlExecutionContext.create(context);
+    const ctx = GqlExecutionContext.create(context);
+    const request = ctx.getContext();
+    request.body = ctx.getArgs().loginUserInput;
     return request;
   }
 }

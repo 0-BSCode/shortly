@@ -12,3 +12,5 @@ export * from './lib/url/update.url.dto';
 export * from './lib/user/user.dto';
 export * from './lib/user/create.user.dto';
 export * from './lib/user/update.user.dto';
+
+export * from './lib/auth/signin.auth.dto';

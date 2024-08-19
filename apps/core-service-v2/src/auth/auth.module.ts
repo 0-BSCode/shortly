@@ -1,9 +1,9 @@
 import { AuthUseCasesModule } from '@auth-use-cases';
 import { Module } from '@nestjs/common';
-import { UserResolver } from './user.resolver';
+import { AuthResolver } from './auth.resolver';
 
 @Module({
   imports: [AuthUseCasesModule],
-  providers: [UserResolver],
+  providers: [AuthResolver],
 })
-export class UserModule {}
+export class AuthModule {}

@@ -9,7 +9,6 @@ export class AppController {
 
   @Get()
   getData() {
-    console.log(path.join(__dirname, '../'));
     return this.appService.getData();
   }
 }

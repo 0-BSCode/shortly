@@ -6,6 +6,8 @@ import { ConfigServiceModule } from '@services/config-service';
 import path from 'path';
 import { AppResolver } from './app.resolver';
 import { AuthServiceModule } from '@services/auth-service';
+import { UserModule } from '../user/user.module';
+import { AuthModule } from '../auth/auth.module';
 
 @Module({
   imports: [
@@ -16,6 +18,8 @@ import { AuthServiceModule } from '@services/auth-service';
       autoSchemaFile: path.join(__dirname, '..', 'gql/schema.gql'),
     }),
     UrlModule,
+    UserModule,
+    AuthModule,
   ],
   providers: [AppResolver],
 })

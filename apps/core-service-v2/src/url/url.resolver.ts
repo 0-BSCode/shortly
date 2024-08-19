@@ -8,9 +8,9 @@ import {
 } from '@nestjs/graphql';
 import { UrlOutput } from './url.dto';
 import { UrlUseCases } from '@url-use-cases';
-import { UrlDto, UserDto } from '@dto';
+import { UrlDto } from '@dto';
 import { UseGuards } from '@nestjs/common';
-import { JwtAuthGuard, LocalAuthGuard } from '@services/auth-service';
+import { JwtAuthGuard } from '@services/auth-service';
 
 @UseGuards(JwtAuthGuard)
 @Resolver(() => UrlOutput)

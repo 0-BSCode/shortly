@@ -1,5 +1,5 @@
 import { UseGuards } from '@nestjs/common';
-import { Args, Context, Mutation, Resolver } from '@nestjs/graphql';
+import { Args, Mutation, Resolver } from '@nestjs/graphql';
 import { LocalAuthGuard } from '@services/auth-service';
 import { LoginOutput, LoginInput } from './auth.dto';
 import { AuthUseCases } from '@auth-use-cases';

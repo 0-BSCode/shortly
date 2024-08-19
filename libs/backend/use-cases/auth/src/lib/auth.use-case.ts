@@ -1,4 +1,10 @@
-import { CreateUserDto, IDataService, SigninAuthDto, UserDto } from '@dto';
+import {
+  CreateUserDto,
+  IDataService,
+  JwtPayloadDto,
+  SigninAuthDto,
+  UserDto,
+} from '@dto';
 import {
   BadRequestException,
   Injectable,
@@ -23,10 +29,11 @@ export class AuthUseCases {
 
     const { password, ...result } = user;
 
-    const token = this.jwtService.sign({
+    const payload: JwtPayloadDto = {
       email: user.email,
-      sub: user.id,
-    });
+      id: user.id,
+    };
+    const token = this.jwtService.sign(payload);
 
     return {
       token,

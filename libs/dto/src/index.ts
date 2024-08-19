@@ -14,3 +14,4 @@ export * from './lib/user/create.user.dto';
 export * from './lib/user/update.user.dto';
 
 export * from './lib/auth/signin.auth.dto';
+export * from './lib/auth/jwt-payload.dto';

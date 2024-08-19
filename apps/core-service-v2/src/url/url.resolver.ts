@@ -10,9 +10,9 @@ import { UrlOutput } from './url.dto';
 import { UrlUseCases } from '@url-use-cases';
 import { UrlDto, UserDto } from '@dto';
 import { UseGuards } from '@nestjs/common';
-import { LocalAuthGuard } from '@services/auth-service';
-import { CurrentUser } from '../user/user.dto';
+import { JwtAuthGuard, LocalAuthGuard } from '@services/auth-service';
 
+@UseGuards(JwtAuthGuard)
 @Resolver(() => UrlOutput)
 export class UrlResolver {
   constructor(private readonly urlUseCases: UrlUseCases) {}

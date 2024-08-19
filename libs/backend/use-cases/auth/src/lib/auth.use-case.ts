@@ -5,10 +5,14 @@ import {
   InternalServerErrorException,
   NotFoundException,
 } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class AuthUseCases {
-  constructor(private readonly dataService: IDataService) {}
+  constructor(
+    private readonly dataService: IDataService,
+    private readonly jwtService: JwtService
+  ) {}
 
   async signIn(email: string): Promise<SigninAuthDto> {
     const user = await this.dataService.users.findByEmail(email);
@@ -19,8 +23,13 @@ export class AuthUseCases {
 
     const { password, ...result } = user;
 
+    const token = this.jwtService.sign({
+      email: user.email,
+      sub: user.id,
+    });
+
     return {
-      token: 'jwt',
+      token,
       email: result.email,
     };
   }
